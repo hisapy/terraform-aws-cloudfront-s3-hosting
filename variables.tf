@@ -30,7 +30,7 @@ variable "route53_zone_id" {
   default     = null
 
   validation {
-    condition     = length(var.cdn_aliases) == 0
+    condition     = length(var.cdn_aliases) == 0 || var.route53_zone_id != null
     error_message = "A route53_zone_id is required to create the DNS records for the cdn_aliases"
   }
 }
