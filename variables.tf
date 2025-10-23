@@ -28,6 +28,11 @@ variable "route53_zone_id" {
   type        = string
   description = "Hosted zone where the CDN aliases will be added to"
   default     = null
+
+  validation {
+    condition     = length(var.cdn_aliases) == 0
+    error_message = "A route53_zone_id is required to create the DNS records for the cdn_aliases"
+  }
 }
 
 variable "function_association" {
