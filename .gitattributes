@@ -1,0 +1,4 @@
+*.tf text eol=lf
+*.tfvars text eol=lf
+*.md text eol=lf
+.github/** text eol=lf
