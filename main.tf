@@ -105,7 +105,7 @@ resource "aws_cloudfront_distribution" "cdn" {
 ## Route53 (required to point the CDN aliases to it) ##
 
 resource "aws_route53_record" "this" {
-  for_each = toset(aws_cloudfront_distribution.cdn.aliases)
+  for_each = toset(var.cdn_aliases)
   zone_id  = var.route53_zone_id
   name     = each.value
   type     = "A"
