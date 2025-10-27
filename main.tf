@@ -85,7 +85,7 @@ resource "aws_cloudfront_distribution" "cdn" {
     cached_methods         = ["GET", "HEAD"]
 
     dynamic "function_association" {
-      for_each = var.function_association
+      for_each = coalesce(var.function_association, [])
 
       content {
         event_type   = function_association.value.event_type
