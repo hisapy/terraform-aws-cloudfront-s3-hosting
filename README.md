@@ -8,7 +8,7 @@ Check the [.tool-versions](./.tool-versions) file to see the tools and the versi
 
 ## Website Deployment
 
-The _basic_ steps to deploy an static website with this setup:
+The _basic_ steps to deploy an static website with this setup would be:
 
 1. Build your site
 2. Upload/sync your new build to S3
@@ -20,7 +20,7 @@ For example:
 # Build (outputs to the dist directory)
 npm run build
 
-# Sync to the S3 bucket my-web-bucket
+# Sync the dist directory to the S3 bucket my-web-bucket
 aws s3 sync ./dist s3://my-web-bucket/ --delete
 
 # Invalidate CloudFront cache
